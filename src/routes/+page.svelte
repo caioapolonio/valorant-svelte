@@ -4,11 +4,11 @@
   console.log(agents);
 </script>
 
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
-<div class="p-8 grid grid-cols-6 gap-6">
+<div class=" grid grid-cols-6 gap-6 px-20">
   {#each agents as agent}
-    <div
-      class="h-96 flex flex-col items-center justify-center overflow-hidden w-full grayscale hover:grayscale-0 transition-all duration-300 ease-in-out group rounded-xl cursor-pointer"
+    <a
+      href="/agent/{agent.uuid}"
+      class="min-h-96 flex flex-col items-center justify-center overflow-hidden w-full grayscale hover:grayscale-0 transition-all duration-300 ease-in-out group rounded-xl cursor-pointer"
       style={`background-color: #${agent.backgroundGradientColors[0]};`}
     >
       <img
@@ -24,7 +24,6 @@
       <div
         class="absolute top-0 right-0 h-full w-12 bg-gradient-to-t from-white/10 via-black to-white/10 opacity-90"
       >
-        <!-- Vertical text -->
         <div
           class="absolute inset-0 flex items-center justify-center pointer-events-none"
         >
@@ -33,6 +32,6 @@
           >
         </div>
       </div>
-    </div>
+    </a>
   {/each}
 </div>
